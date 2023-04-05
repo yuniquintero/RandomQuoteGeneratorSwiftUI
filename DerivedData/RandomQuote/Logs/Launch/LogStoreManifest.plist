@@ -5,6 +5,97 @@
 	<key>logFormatVersion</key>
 	<integer>10</integer>
 	<key>logs</key>
-	<dict/>
+	<dict>
+		<key>E931098C-6B25-41BF-9932-9186159B85A1</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>D593F165-6884-4D76-ABEB-002780071B7E</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-RandomQuote-2023.04.05_17-10-40-+0200.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>RandomQuote project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>RandomQuote</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run RandomQuote</string>
+			<key>timeStartedRecording</key>
+			<real>702400240.27877402</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run RandomQuote</string>
+			<key>uniqueIdentifier</key>
+			<string>E931098C-6B25-41BF-9932-9186159B85A1</string>
+		</dict>
+		<key>EB801C66-FEBA-4A4B-B004-9B137F20C01F</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>CAC19D99-F03F-41EC-8F0D-BE297055130A</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-RandomQuote-2023.04.05_18-25-24-+0200.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>RandomQuote project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>RandomQuote</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run RandomQuote</string>
+			<key>timeStartedRecording</key>
+			<real>702404724.73014796</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run RandomQuote</string>
+			<key>uniqueIdentifier</key>
+			<string>EB801C66-FEBA-4A4B-B004-9B137F20C01F</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

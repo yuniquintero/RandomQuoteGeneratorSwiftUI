@@ -7,18 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3961DB3329DDBCA700919144 /* QuoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3961DB3229DDBCA700919144 /* QuoteRepository.swift */; };
+		3961DB3429DDBD1A00919144 /* QuoteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA804829DDB2AE0022DFEA /* QuoteProvider.swift */; };
+		3961DB3529DDBD1E00919144 /* RandomQuoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA804629DDB2AE0022DFEA /* RandomQuoteResponse.swift */; };
 		39BA7FF629DDA59B0022DFEA /* RandomQuoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA7FF529DDA59B0022DFEA /* RandomQuoteApp.swift */; };
 		39BA7FF829DDA59B0022DFEA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA7FF729DDA59B0022DFEA /* ContentView.swift */; };
 		39BA7FFA29DDA59D0022DFEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39BA7FF929DDA59D0022DFEA /* Assets.xcassets */; };
 		39BA7FFD29DDA59D0022DFEA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39BA7FFC29DDA59D0022DFEA /* Preview Assets.xcassets */; };
+		39BA803329DDACA30022DFEA /* package-models in Frameworks */ = {isa = PBXBuildFile; productRef = 39BA803229DDACA30022DFEA /* package-models */; };
+		39BA803529DDACA70022DFEA /* package-networking in Frameworks */ = {isa = PBXBuildFile; productRef = 39BA803429DDACA70022DFEA /* package-networking */; };
+		39BA804329DDB2550022DFEA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA804229DDB2550022DFEA /* ViewModel.swift */; };
+		39BA805829DDB2AE0022DFEA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA804C29DDB2AE0022DFEA /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3961DB3229DDBCA700919144 /* QuoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRepository.swift; sourceTree = "<group>"; };
 		39BA7FF229DDA59B0022DFEA /* RandomQuote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomQuote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39BA7FF529DDA59B0022DFEA /* RandomQuoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomQuoteApp.swift; sourceTree = "<group>"; };
 		39BA7FF729DDA59B0022DFEA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		39BA7FF929DDA59D0022DFEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39BA7FFC29DDA59D0022DFEA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		39BA803029DDAC6F0022DFEA /* package-models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "package-models"; path = "../DemoResources/package-models"; sourceTree = "<group>"; };
+		39BA803129DDAC720022DFEA /* package-networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "package-networking"; path = "../DemoResources/package-networking"; sourceTree = "<group>"; };
+		39BA804229DDB2550022DFEA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		39BA804629DDB2AE0022DFEA /* RandomQuoteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomQuoteResponse.swift; sourceTree = "<group>"; };
+		39BA804829DDB2AE0022DFEA /* QuoteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteProvider.swift; sourceTree = "<group>"; };
+		39BA804C29DDB2AE0022DFEA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = API.swift; path = ../../../DemoResources/Networking/API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39BA803329DDACA30022DFEA /* package-models in Frameworks */,
+				39BA803529DDACA70022DFEA /* package-networking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +53,7 @@
 			children = (
 				39BA7FF429DDA59B0022DFEA /* RandomQuote */,
 				39BA7FF329DDA59B0022DFEA /* Products */,
+				39BA802729DDAC660022DFEA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,8 +68,10 @@
 		39BA7FF429DDA59B0022DFEA /* RandomQuote */ = {
 			isa = PBXGroup;
 			children = (
+				39BA804429DDB2AE0022DFEA /* Networking */,
 				39BA7FF529DDA59B0022DFEA /* RandomQuoteApp.swift */,
 				39BA7FF729DDA59B0022DFEA /* ContentView.swift */,
+				39BA804229DDB2550022DFEA /* ViewModel.swift */,
 				39BA7FF929DDA59D0022DFEA /* Assets.xcassets */,
 				39BA7FFB29DDA59D0022DFEA /* Preview Content */,
 			);
@@ -65,6 +84,50 @@
 				39BA7FFC29DDA59D0022DFEA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		39BA802729DDAC660022DFEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39BA803129DDAC720022DFEA /* package-networking */,
+				39BA803029DDAC6F0022DFEA /* package-models */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39BA804429DDB2AE0022DFEA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				39BA804529DDB2AE0022DFEA /* Responses */,
+				39BA804729DDB2AE0022DFEA /* Provider */,
+				39BA804D29DDB2AE0022DFEA /* Repositories */,
+				39BA804C29DDB2AE0022DFEA /* API.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		39BA804529DDB2AE0022DFEA /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				39BA804629DDB2AE0022DFEA /* RandomQuoteResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		39BA804729DDB2AE0022DFEA /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				39BA804829DDB2AE0022DFEA /* QuoteProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		39BA804D29DDB2AE0022DFEA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				3961DB3229DDBCA700919144 /* QuoteRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +146,10 @@
 			dependencies = (
 			);
 			name = RandomQuote;
+			packageProductDependencies = (
+				39BA803229DDACA30022DFEA /* package-models */,
+				39BA803429DDACA70022DFEA /* package-networking */,
+			);
 			productName = RandomQuote;
 			productReference = 39BA7FF229DDA59B0022DFEA /* RandomQuote.app */;
 			productType = "com.apple.product-type.application";
@@ -138,7 +205,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				39BA7FF829DDA59B0022DFEA /* ContentView.swift in Sources */,
+				39BA804329DDB2550022DFEA /* ViewModel.swift in Sources */,
+				3961DB3329DDBCA700919144 /* QuoteRepository.swift in Sources */,
+				3961DB3429DDBD1A00919144 /* QuoteProvider.swift in Sources */,
+				3961DB3529DDBD1E00919144 /* RandomQuoteResponse.swift in Sources */,
 				39BA7FF629DDA59B0022DFEA /* RandomQuoteApp.swift in Sources */,
+				39BA805829DDB2AE0022DFEA /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +411,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		39BA803229DDACA30022DFEA /* package-models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "package-models";
+		};
+		39BA803429DDACA70022DFEA /* package-networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "package-networking";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 39BA7FEA29DDA59B0022DFEA /* Project object */;
 }

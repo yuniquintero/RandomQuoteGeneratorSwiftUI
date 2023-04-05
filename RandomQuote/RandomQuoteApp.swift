@@ -11,7 +11,8 @@ import SwiftUI
 struct RandomQuoteApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let viewModel = ViewModel()
+            ContentView(viewModel: viewModel)
         }
     }
 }
