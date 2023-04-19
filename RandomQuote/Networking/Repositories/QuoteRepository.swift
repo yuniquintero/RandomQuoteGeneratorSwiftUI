@@ -17,4 +17,12 @@ struct QuoteRepository {
         let request: URLRequest = .init(url: url, httpMethod: .get)
         ModuleNetworking.request(request: request, completion)
     }
+
+    func getTagList(completion: @escaping APIResponseCompletion<[Tag]>) {
+        guard let url = URL(string: API.Path.getTags) else {
+            return completion(.failure(ErrorType.url))
+        }
+        let request: URLRequest = .init(url: url, httpMethod: .get)
+        ModuleNetworking.request(request: request, completion)
+    }
 }

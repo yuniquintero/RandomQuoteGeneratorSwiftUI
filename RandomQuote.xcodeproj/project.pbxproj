@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39431A3F29F05D5A003E3552 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39431A3E29F05D5A003E3552 /* TagListView.swift */; };
 		3961DB3329DDBCA700919144 /* QuoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3961DB3229DDBCA700919144 /* QuoteRepository.swift */; };
 		3961DB3429DDBD1A00919144 /* QuoteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA804829DDB2AE0022DFEA /* QuoteProvider.swift */; };
-		3961DB3529DDBD1E00919144 /* RandomQuoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA804629DDB2AE0022DFEA /* RandomQuoteResponse.swift */; };
+		397659D729F06039007E5AAA /* TagCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397659D629F06039007E5AAA /* TagCellView.swift */; };
 		39BA7FF629DDA59B0022DFEA /* RandomQuoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA7FF529DDA59B0022DFEA /* RandomQuoteApp.swift */; };
 		39BA7FF829DDA59B0022DFEA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA7FF729DDA59B0022DFEA /* ContentView.swift */; };
 		39BA7FFA29DDA59D0022DFEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39BA7FF929DDA59D0022DFEA /* Assets.xcassets */; };
@@ -21,7 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39431A3E29F05D5A003E3552 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		3961DB3229DDBCA700919144 /* QuoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRepository.swift; sourceTree = "<group>"; };
+		397659D629F06039007E5AAA /* TagCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCellView.swift; sourceTree = "<group>"; };
 		39BA7FF229DDA59B0022DFEA /* RandomQuote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomQuote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39BA7FF529DDA59B0022DFEA /* RandomQuoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomQuoteApp.swift; sourceTree = "<group>"; };
 		39BA7FF729DDA59B0022DFEA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,7 +33,6 @@
 		39BA803029DDAC6F0022DFEA /* package-models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "package-models"; path = "../DemoResources/package-models"; sourceTree = "<group>"; };
 		39BA803129DDAC720022DFEA /* package-networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "package-networking"; path = "../DemoResources/package-networking"; sourceTree = "<group>"; };
 		39BA804229DDB2550022DFEA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		39BA804629DDB2AE0022DFEA /* RandomQuoteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomQuoteResponse.swift; sourceTree = "<group>"; };
 		39BA804829DDB2AE0022DFEA /* QuoteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteProvider.swift; sourceTree = "<group>"; };
 		39BA804C29DDB2AE0022DFEA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = API.swift; path = ../../../DemoResources/Networking/API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +73,8 @@
 				39BA804429DDB2AE0022DFEA /* Networking */,
 				39BA7FF529DDA59B0022DFEA /* RandomQuoteApp.swift */,
 				39BA7FF729DDA59B0022DFEA /* ContentView.swift */,
+				39431A3E29F05D5A003E3552 /* TagListView.swift */,
+				397659D629F06039007E5AAA /* TagCellView.swift */,
 				39BA804229DDB2550022DFEA /* ViewModel.swift */,
 				39BA7FF929DDA59D0022DFEA /* Assets.xcassets */,
 				39BA7FFB29DDA59D0022DFEA /* Preview Content */,
@@ -98,20 +102,11 @@
 		39BA804429DDB2AE0022DFEA /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				39BA804529DDB2AE0022DFEA /* Responses */,
 				39BA804729DDB2AE0022DFEA /* Provider */,
 				39BA804D29DDB2AE0022DFEA /* Repositories */,
 				39BA804C29DDB2AE0022DFEA /* API.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		39BA804529DDB2AE0022DFEA /* Responses */ = {
-			isa = PBXGroup;
-			children = (
-				39BA804629DDB2AE0022DFEA /* RandomQuoteResponse.swift */,
-			);
-			path = Responses;
 			sourceTree = "<group>";
 		};
 		39BA804729DDB2AE0022DFEA /* Provider */ = {
@@ -207,8 +202,9 @@
 				39BA7FF829DDA59B0022DFEA /* ContentView.swift in Sources */,
 				39BA804329DDB2550022DFEA /* ViewModel.swift in Sources */,
 				3961DB3329DDBCA700919144 /* QuoteRepository.swift in Sources */,
+				397659D729F06039007E5AAA /* TagCellView.swift in Sources */,
+				39431A3F29F05D5A003E3552 /* TagListView.swift in Sources */,
 				3961DB3429DDBD1A00919144 /* QuoteProvider.swift in Sources */,
-				3961DB3529DDBD1E00919144 /* RandomQuoteResponse.swift in Sources */,
 				39BA7FF629DDA59B0022DFEA /* RandomQuoteApp.swift in Sources */,
 				39BA805829DDB2AE0022DFEA /* API.swift in Sources */,
 			);

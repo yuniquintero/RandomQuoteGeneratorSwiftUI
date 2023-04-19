@@ -15,4 +15,8 @@ struct QuoteProvider {
     func getRandomQuote(completion: @escaping APIResponseCompletion<Quote>) {
         repository.getRandomQuote(completion: completion)
     }
+
+    func getTagList(completion: @escaping APIResponseCompletion<[Tag]>) {
+        repository.getTagList(completion: completion)
+    }
 }

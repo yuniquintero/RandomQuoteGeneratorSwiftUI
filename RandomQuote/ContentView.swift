@@ -66,6 +66,12 @@ struct ContentView: View {
                 .padding()
                 .foregroundColor(.gray)
         }
+        /*Button(action: {
+            viewModel.getTagList()
+            print("SOS", viewModel.tagList)
+        }, label: {
+            Text("mostrar lista")
+        })*/
         .onAppear {
             viewModel.getData()
         }

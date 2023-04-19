@@ -11,6 +11,7 @@ import package_models
 final class ViewModel: ObservableObject {
 
     @Published var randomQuote: Quote?
+    @Published var tagList: [Tag] = []
     @Published var loadingState: LoadingState = .idle
 
     private let provider: QuoteProvider
@@ -22,12 +23,27 @@ final class ViewModel: ObservableObject {
     func getData() {
         loadingState = .loading
         provider.getRandomQuote(completion: { [weak self] result in
-            print("SOS", result)
             guard let self = self else { return }
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {
                     self.randomQuote = response
+                    self.loadingState = .idle
+                }
+            case .failure(let error):
+                self.loadingState = .error(error)
+            }
+        })
+    }
+
+    func getTagList() {
+        loadingState = .loading
+        provider.getTagList(completion: { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                DispatchQueue.main.async {
+                    self.tagList = response
                     self.loadingState = .idle
                 }
             case .failure(let error):
