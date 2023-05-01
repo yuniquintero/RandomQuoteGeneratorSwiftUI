@@ -8,26 +8,26 @@
 import Foundation
 import package_models
 
-final class ViewModel: ObservableObject {
+final class RandomViewModel: ObservableObject {
 
     @Published var randomQuote: Quote?
-    @Published var tagList: [Tag] = []
     @Published var loadingState: LoadingState = .idle
+    @Published var selectedTag: String
 
     private let provider: QuoteProvider
 
-    init(provider: QuoteProvider = .init()) {
+    init(provider: QuoteProvider = .init(), selectedTag: String = "") {
         self.provider = provider
+        self.selectedTag = selectedTag
     }
 
-    func getData() {
+    func getRandomQuote() {
         loadingState = .loading
-        provider.getRandomQuote(completion: { [weak self] result in
-            guard let self = self else { return }
+        provider.getRandomQuote(completion: { result in
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {
-                    self.randomQuote = response
+                    self.randomQuote = response.first
                     self.loadingState = .idle
                 }
             case .failure(let error):
@@ -36,14 +36,13 @@ final class ViewModel: ObservableObject {
         })
     }
 
-    func getTagList() {
+    func getTagQuote() {
         loadingState = .loading
-        provider.getTagList(completion: { [weak self] result in
-            guard let self = self else { return }
+        provider.getTagQuote(tag: selectedTag.replacingOccurrences(of: " ", with: ""), completion: { result in
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {
-                    self.tagList = response
+                    self.randomQuote = response.first
                     self.loadingState = .idle
                 }
             case .failure(let error):

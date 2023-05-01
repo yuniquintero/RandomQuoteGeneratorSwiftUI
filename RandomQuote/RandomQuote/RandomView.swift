@@ -8,21 +8,12 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
-struct ContentView: View {
-    @StateObject var viewModel: ViewModel
+struct RandomView: View {
+    @StateObject var viewModel: RandomViewModel
     @State private var textSwitch = false
 
     var body: some View {
         VStack {
-            VStack {
-                Image(systemName: "quote.closing")
-                    .foregroundColor(Color.orange)
-                    .font(.system(size: 120))
-                    .padding()
-                Text("Random Quote Generator")
-                    .font(.title)
-                    .fontWeight(.bold)
-            }
             Spacer()
             VStack {
                 if viewModel.loadingState == .loading {
@@ -32,17 +23,34 @@ struct ContentView: View {
                 } else {
                     Text("\"" + (viewModel.randomQuote?.content ?? "") + "\"")
                         .italic()
-                        .font(.system(size: 20))
+                        .font(.system(size: 28))
                         .padding()
                     Text(viewModel.randomQuote?.author ?? "")
-                        .font(.caption)
+                        .font(.system(size: 18))
+                    .padding()
+                    VStack {
+                        ForEach(viewModel.randomQuote?.tags ?? [], id: \.self) { tag in
+                                        Text(tag)
+                                .foregroundColor(.orange)
+                                .font(.system(size: 14))
+                                .bold()
+                                    }
+                    }
+                    .padding(8)
+                    Image(systemName: "tag.fill")
+                        .foregroundColor(Color.orange)
+                        .font(.system(size: 20))
                 }
             }
             .padding()
             Spacer()
             HStack(spacing: 30) {
                 Button(action: {
-                    viewModel.getData()
+                    if viewModel.selectedTag == "" {
+                        viewModel.getRandomQuote()
+                    } else {
+                        viewModel.getTagQuote()
+                    }
                 }, label: {
                     Image(systemName: "arrow.clockwise.circle.fill")
                         .foregroundColor(Color.orange)
@@ -66,21 +74,20 @@ struct ContentView: View {
                 .padding()
                 .foregroundColor(.gray)
         }
-        /*Button(action: {
-            viewModel.getTagList()
-            print("SOS", viewModel.tagList)
-        }, label: {
-            Text("mostrar lista")
-        })*/
         .onAppear {
-            viewModel.getData()
+            if viewModel.selectedTag == "" {
+                viewModel.getRandomQuote()
+            } else {
+                viewModel.getTagQuote()
+            }
         }
+        .navigationBarTitle(viewModel.selectedTag)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = ViewModel()
-        ContentView(viewModel: viewModel)
+        let viewModel = RandomViewModel()
+        RandomView(viewModel: viewModel)
     }
 }

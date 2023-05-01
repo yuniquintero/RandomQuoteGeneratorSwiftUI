@@ -12,11 +12,15 @@ struct TagCellView: View {
 
     var body: some View {
         VStack {
-            Text(name)
-                .padding(5)
-                .background(Color.white)
-                .cornerRadius(4)
-                .multilineTextAlignment(.center)
+            NavigationLink(name.replacingOccurrences(of: " ", with: "\n")) {
+                RandomView(viewModel: RandomViewModel(selectedTag: name))
+            }
+            .padding(5)
+            .background(Color.white)
+            .cornerRadius(4)
+            .multilineTextAlignment(.center)
+            .foregroundColor(.black)
+                
         }
         .aspectRatio(contentMode: .fill)
         .frame(height: 150)

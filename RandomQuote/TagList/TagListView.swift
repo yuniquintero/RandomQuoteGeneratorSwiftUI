@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TagListView: View {
-    @StateObject var viewModel: ViewModel
+    @StateObject var viewModel: TagListViewModel
 
     let columns = [
             GridItem(.flexible()),
@@ -26,13 +26,11 @@ struct TagListView: View {
                 ScrollView {
                     LazyVGrid(columns: columns) {
                         ForEach(viewModel.tagList) { tag in
-                            TagCellView(name: tag.name.replacingOccurrences(of: " ", with: "\n"))
+                            TagCellView(name: tag.name)
                         }
                     }
                 }
             }
-        }.onAppear {
-            viewModel.getData()
         }
         .onAppear {
             viewModel.getTagList()
@@ -42,7 +40,7 @@ struct TagListView: View {
 
 struct TagListView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = ViewModel()
+        let viewModel = TagListViewModel()
         TagListView(viewModel: viewModel)
     }
 }
