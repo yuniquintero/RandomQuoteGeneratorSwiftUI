@@ -56,23 +56,12 @@ struct RandomView: View {
                         .foregroundColor(Color.orange)
                         .font(.system(size: 40))
                 })
-                Button(action: {
-                    UIPasteboard.general.setValue(viewModel.randomQuote?.content ?? "",
-                                                  forPasteboardType: UTType.plainText.identifier)
-                    self.textSwitch.toggle()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                self.textSwitch.toggle()
-                            }
-                }, label: {
-                    Image(systemName: "doc.on.doc.fill")
+                ShareLink(item: "\"\(viewModel.randomQuote?.content ?? "")\" \(viewModel.randomQuote?.author ?? "")") {
+                    Image(systemName: "square.and.arrow.up.fill")
                         .foregroundColor(Color.orange)
                         .font(.system(size: 34))
-                })
+                }
             }
-            Text(textSwitch ? "Quote sent to clipboard!" : "")
-                .font(.footnote)
-                .padding()
-                .foregroundColor(.gray)
         }
         .onAppear {
             if viewModel.selectedTag == "" {
