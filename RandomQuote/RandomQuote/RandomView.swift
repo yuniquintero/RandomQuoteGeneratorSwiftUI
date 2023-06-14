@@ -10,7 +10,8 @@ import UniformTypeIdentifiers
 
 struct RandomView: View {
     @StateObject var viewModel: RandomViewModel
-    @State private var textSwitch = false
+    @State private var likePressed = false
+    @State private var likeIcon = "star"
 
     var body: some View {
         VStack {
@@ -46,11 +47,22 @@ struct RandomView: View {
             Spacer()
             HStack(spacing: 30) {
                 Button(action: {
+                    likePressed.toggle()
+                    likeIcon = likePressed ? "star.fill" : "star"
+                    viewModel.saveQuote()
+                }, label: {
+                    Image(systemName: likeIcon)
+                        .foregroundColor(Color.orange)
+                        .font(.system(size: 40))
+                })
+                Button(action: {
                     if viewModel.selectedTag == "" {
                         viewModel.getRandomQuote()
                     } else {
                         viewModel.getTagQuote()
                     }
+                    likePressed = false
+                    likeIcon = "star"
                 }, label: {
                     Image(systemName: "arrow.clockwise.circle.fill")
                         .foregroundColor(Color.orange)
@@ -62,6 +74,7 @@ struct RandomView: View {
                         .font(.system(size: 34))
                 }
             }
+            Spacer()
         }
         .onAppear {
             if viewModel.selectedTag == "" {

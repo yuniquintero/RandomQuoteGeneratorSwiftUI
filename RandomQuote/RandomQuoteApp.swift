@@ -11,7 +11,7 @@ import SwiftUI
 struct RandomQuoteApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            TabBarView()
         }
     }
 }

@@ -10,6 +10,9 @@
 		39431A3F29F05D5A003E3552 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39431A3E29F05D5A003E3552 /* TagListView.swift */; };
 		3961DB3329DDBCA700919144 /* QuoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3961DB3229DDBCA700919144 /* QuoteRepository.swift */; };
 		3961DB3429DDBD1A00919144 /* QuoteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA804829DDB2AE0022DFEA /* QuoteProvider.swift */; };
+		3971BC282A2FDA350065614B /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3971BC272A2FDA350065614B /* TabBarView.swift */; };
+		3971BC2B2A2FDFA10065614B /* FavListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3971BC2A2A2FDFA10065614B /* FavListView.swift */; };
+		3971BC2D2A2FE7850065614B /* FavListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3971BC2C2A2FE7850065614B /* FavListViewModel.swift */; };
 		397659D729F06039007E5AAA /* TagCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397659D629F06039007E5AAA /* TagCellView.swift */; };
 		39BA7FF629DDA59B0022DFEA /* RandomQuoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA7FF529DDA59B0022DFEA /* RandomQuoteApp.swift */; };
 		39BA7FF829DDA59B0022DFEA /* RandomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA7FF729DDA59B0022DFEA /* RandomView.swift */; };
@@ -26,6 +29,9 @@
 /* Begin PBXFileReference section */
 		39431A3E29F05D5A003E3552 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		3961DB3229DDBCA700919144 /* QuoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRepository.swift; sourceTree = "<group>"; };
+		3971BC272A2FDA350065614B /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		3971BC2A2A2FDFA10065614B /* FavListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavListView.swift; sourceTree = "<group>"; };
+		3971BC2C2A2FE7850065614B /* FavListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavListViewModel.swift; sourceTree = "<group>"; };
 		397659D629F06039007E5AAA /* TagCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCellView.swift; sourceTree = "<group>"; };
 		39BA7FF229DDA59B0022DFEA /* RandomQuote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomQuote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39BA7FF529DDA59B0022DFEA /* RandomQuoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomQuoteApp.swift; sourceTree = "<group>"; };
@@ -54,6 +60,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3971BC262A2FD9D80065614B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				3971BC272A2FDA350065614B /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		3971BC292A2FDF8E0065614B /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				3971BC2A2A2FDFA10065614B /* FavListView.swift */,
+				3971BC2C2A2FE7850065614B /* FavListViewModel.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		39BA7FE929DDA59B0022DFEA = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +99,8 @@
 			children = (
 				39BA804429DDB2AE0022DFEA /* Networking */,
 				39BA7FF529DDA59B0022DFEA /* RandomQuoteApp.swift */,
+				3971BC292A2FDF8E0065614B /* Favorites */,
+				3971BC262A2FD9D80065614B /* TabBar */,
 				39BBAFA72A002EB800A486BD /* RandomQuote */,
 				39BBAFA82A002EC800A486BD /* Home */,
 				39BBAFA62A002E5600A486BD /* TagList */,
@@ -230,7 +255,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				39F966D829F865570065A59A /* HomeView.swift in Sources */,
+				3971BC282A2FDA350065614B /* TabBarView.swift in Sources */,
 				39BA7FF829DDA59B0022DFEA /* RandomView.swift in Sources */,
+				3971BC2D2A2FE7850065614B /* FavListViewModel.swift in Sources */,
+				3971BC2B2A2FDFA10065614B /* FavListView.swift in Sources */,
 				39BA804329DDB2550022DFEA /* RandomViewModel.swift in Sources */,
 				3961DB3329DDBCA700919144 /* QuoteRepository.swift in Sources */,
 				397659D729F06039007E5AAA /* TagCellView.swift in Sources */,

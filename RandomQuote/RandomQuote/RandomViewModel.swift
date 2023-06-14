@@ -50,6 +50,22 @@ final class RandomViewModel: ObservableObject {
             }
         })
     }
+
+    func saveQuote() {
+        let json : [String:Any] = [
+            "content": randomQuote?.content ?? "",
+            "author": randomQuote?.author ?? "",
+            "tags": randomQuote?.tags ?? [],
+            "id": randomQuote?.id ?? ""
+        ]
+
+        if var favorites = (UserDefaults.standard.array(forKey: "favorites") as? [[String:Any]]) {
+            favorites.append(json)
+            UserDefaults.standard.set(favorites, forKey: "favorites")
+        } else {
+            UserDefaults.standard.set([json], forKey: "favorites")
+        }
+    }
 }
 
 enum LoadingState: Equatable {
