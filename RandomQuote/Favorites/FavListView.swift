@@ -13,9 +13,13 @@ struct FavListView: View {
     @StateObject var viewModel: FavListViewModel
 
     var body: some View {
-        List(viewModel.getQuotes()) { quote in
-            NavigationLink(quote.content) {
-                //RandomView(viewModel: RandomViewModel(selectedTag: name))
+        NavigationView {
+            List(viewModel.savedQuotes) { quote in
+                NavigationLink(quote.content) {
+                    RandomView(viewModel: RandomViewModel(favQuote: quote, fromFav: true))
+                }
+            }.onAppear() {
+                viewModel.getQuotes()
             }
         }
     }

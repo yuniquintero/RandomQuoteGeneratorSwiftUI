@@ -49,7 +49,7 @@ struct RandomView: View {
                 Button(action: {
                     likePressed.toggle()
                     likeIcon = likePressed ? "star.fill" : "star"
-                    viewModel.saveQuote()
+                    viewModel.saveQuote(isFav: !likePressed)
                 }, label: {
                     Image(systemName: likeIcon)
                         .foregroundColor(Color.orange)
@@ -77,10 +77,16 @@ struct RandomView: View {
             Spacer()
         }
         .onAppear {
-            if viewModel.selectedTag == "" {
-                viewModel.getRandomQuote()
-            } else {
-                viewModel.getTagQuote()
+            if viewModel.fromFav {
+                likeIcon = "star.fill"
+                likePressed = true
+            }
+            if !viewModel.fromFav {
+                if viewModel.selectedTag == "" {
+                    viewModel.getRandomQuote()
+                } else {
+                    viewModel.getTagQuote()
+                }
             }
         }
         .navigationBarTitle(viewModel.selectedTag)

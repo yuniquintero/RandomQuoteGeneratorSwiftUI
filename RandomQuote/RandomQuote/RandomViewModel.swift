@@ -13,12 +13,15 @@ final class RandomViewModel: ObservableObject {
     @Published var randomQuote: Quote?
     @Published var loadingState: LoadingState = .idle
     @Published var selectedTag: String
+    @Published var fromFav = false
 
     private let provider: QuoteProvider
 
-    init(provider: QuoteProvider = .init(), selectedTag: String = "") {
+    init(provider: QuoteProvider = .init(), selectedTag: String = "", favQuote: Quote? = nil, fromFav : Bool = false) {
         self.provider = provider
         self.selectedTag = selectedTag
+        self.randomQuote = favQuote
+        self.fromFav = fromFav
     }
 
     func getRandomQuote() {
@@ -51,19 +54,23 @@ final class RandomViewModel: ObservableObject {
         })
     }
 
-    func saveQuote() {
-        let json : [String:Any] = [
-            "content": randomQuote?.content ?? "",
-            "author": randomQuote?.author ?? "",
-            "tags": randomQuote?.tags ?? [],
-            "id": randomQuote?.id ?? ""
-        ]
-
-        if var favorites = (UserDefaults.standard.array(forKey: "favorites") as? [[String:Any]]) {
-            favorites.append(json)
-            UserDefaults.standard.set(favorites, forKey: "favorites")
+    func saveQuote(isFav: Bool = false) {
+        if isFav {
+            // remove fav
         } else {
-            UserDefaults.standard.set([json], forKey: "favorites")
+            let json : [String:Any] = [
+                "content": randomQuote?.content ?? "",
+                "author": randomQuote?.author ?? "",
+                "tags": randomQuote?.tags ?? [],
+                "id": randomQuote?.id ?? ""
+            ]
+
+            if var favorites = (UserDefaults.standard.array(forKey: "favorites") as? [[String:Any]]) {
+                favorites.append(json)
+                UserDefaults.standard.set(favorites, forKey: "favorites")
+            } else {
+                UserDefaults.standard.set([json], forKey: "favorites")
+            }
         }
     }
 }

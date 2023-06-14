@@ -10,17 +10,17 @@ import package_models
 
 final class FavListViewModel: ObservableObject {
 
-    var savedQuotes : [[String:Any]] = (UserDefaults.standard.array(forKey: "favorites") ?? []) as? [[String:Any]] ?? []
+    @Published var savedQuotes : [Quote] = []
 
-    func getQuotes() -> [Quote] {
+    func getQuotes() {
         var favQuotes : [Quote] = []
-        let favorites = savedQuotes
+        let favorites = (UserDefaults.standard.array(forKey: "favorites") ?? []) as? [[String:Any]] ?? []
         for fav in favorites {
             let quote = Quote(id: fav["id"] as? String ?? "", content: fav["content"] as? String ?? "", author: fav["author"] as? String ?? "" , tags: fav["tags"] as? [String] ?? [])
             favQuotes.append(quote)
 
         }
-        return favQuotes
+        savedQuotes = favQuotes
     }
 
 }
